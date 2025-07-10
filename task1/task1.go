@@ -1,6 +1,10 @@
 package task1
 
-import "gorm.io/gorm"
+import (
+	"fmt"
+
+	"gorm.io/gorm"
+)
 
 type Student struct {
 	ID    int    `gorm:"primaryKey;autoIncrement"`
@@ -22,4 +26,13 @@ func Run(db *gorm.DB) {
 	db.Create(s)
 
 	// 查询 students 表中所有年龄大于 18 岁的学生信息
+	var students []Student
+	db.Where("age > ?", 18).Find(&students)
+	fmt.Println(students)
+
+	// 将 students 表中姓名为 "张三" 的学生年级更新为 "四年级"
+	db.Where("name= ?", "张三").Model(&Student{}).Update("grade", "四年级")
+
+	// 删除 students 表中年龄小于 15 岁的学生记录
+	db.Debug().Where("age < ?", 15).Delete(&Student{})
 }
