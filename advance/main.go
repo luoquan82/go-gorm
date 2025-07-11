@@ -15,5 +15,6 @@ func main() {
 	}
 
 	// task1.Run(db)
-	task2.Run(db)
+	// task2.FindAllPostAndCommentByName(db, "王五")
+	task2.FindMostCommentPost(db)
 }

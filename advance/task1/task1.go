@@ -90,6 +90,7 @@ func initTables(db *gorm.DB) {
 					Comments: []Comment{
 						{Comm: "评论1"},
 						{Comm: "评论2"},
+						{Comm: "评论3"},
 					},
 				},
 			},
