@@ -13,6 +13,8 @@ func findAllPostAndCommentByName(db *gorm.DB, userName string) {
 	fmt.Printf("%s的信息:%#v\n", userName, users)
 }
 
+func findMostCommentPost(db *gorm.DB) {}
+
 func Run(db *gorm.DB) {
 	findAllPostAndCommentByName(db, "王五")
 }
