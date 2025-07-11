@@ -1,7 +1,7 @@
 package main
 
 import (
-	"go-gorm/basic/task2"
+	"go-gorm/basic/task1"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -14,6 +14,5 @@ func main() {
 		panic(err)
 	}
 
-	// task1.Run(db)
-	task2.Transfer(db, "Alice", "Bob", 100.0)
+	task1.Run(db)
 }
