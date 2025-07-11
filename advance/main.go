@@ -1,7 +1,7 @@
 package main
 
 import (
-	"go-gorm/advance/task2"
+	"go-gorm/advance/task3"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -16,5 +16,6 @@ func main() {
 
 	// task1.Run(db)
 	// task2.FindAllPostAndCommentByName(db, "王五")
-	task2.FindMostCommentPost(db)
+	// task2.FindMostCommentPost(db)
+	task3.DeletePost(db)
 }

@@ -13,11 +13,12 @@ type User struct {
 
 // 文章表
 type Post struct {
-	ID       uint `gorm:"primaryKey;autoIncrement"`
-	UserID   uint
-	Title    string `gorm:"size:100;not null"`
-	Content  string `gorm:"size:10000"`
-	Comments []Comment
+	ID        uint `gorm:"primaryKey;autoIncrement"`
+	UserID    uint
+	Title     string `gorm:"size:100;not null"`
+	Content   string `gorm:"size:10000"`
+	IsComment bool   `gorm:"column:is_comment;default:false;not null"`
+	Comments  []Comment
 }
 
 // 评论表
